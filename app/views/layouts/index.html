@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rails Message Boards</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="top_nav">
+            <h1><%= image_tag("rails.png", :size => '50x50') %> Rails Boards</h1>
+            
+            <% if current_user %>
+            <%= link_to "Edit Profile", edit_user_path(current_user.id)%> |
+            <%= link_to "Logout", :logout%>
+            <% else %>
+            <%= link_to "Register", new_user_path%> |
+            <%= link_to "Login", :login %>
+            <% end %>
+            <div class="bclear"></div>
+        </div>
+        
+    
+        <div id="content">
+            <%= yield %>
+        </div>
+
+        <div id="footer">
+
+        </div>
+    </div>
+</body>
+</html>

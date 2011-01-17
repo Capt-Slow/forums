@@ -1,0 +1,183 @@
+  [1m[36mSQL (74.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.6ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (60.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (9.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20101006075027)
+  [1m[36mSQL (1.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101006075027')
+Migrating to CreateUserSessions (20101006081231)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101006081231')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_sessions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (83.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (12.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20101006075027)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101006075027')
+Migrating to CreateUserSessions (20101006081231)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20101006081231')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("user_sessions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/users" for 127.0.0.1 at 2011-01-16 16:59:23 -0800
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 137ms (Views: 17.7ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20101006075027)
+Migrating to CreateUserSessions (20101006081231)
+Migrating to CreateBoards (20110117010019)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "boards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(50), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117010019')
+Migrating to CreateConversations (20110117010045)
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE TABLE "conversations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(50), "board_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("conversations")
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE INDEX "index_conversations_on_board_id" ON "conversations" ("board_id")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("conversations")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_conversations_on_board_id')[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE INDEX "index_conversations_on_user_id" ON "conversations" ("user_id")
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110117010045')[0m
+Migrating to CreateComments (20110117010110)
+  [1m[35mSQL (0.8ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "conversation_id" integer, "body" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE INDEX "index_comments_on_conversation_id" ON "comments" ("conversation_id")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_comments_on_conversation_id')
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117010110')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("boards")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_comments_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_comments_on_conversation_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("conversations")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_conversations_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_conversations_on_board_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("user_sessions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/conversations" for 127.0.0.1 at 2011-01-16 17:51:37 -0800
+
+ActionController::RoutingError (No route matches "/conversations"):
+  
+
+Rendered /home/borisd/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2011-01-16 17:52:26 -0800
+  Processing by BoardsController#index as HTML
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBoard Load (0.1ms)[0m  SELECT "boards".* FROM "boards"
+Rendered boards/index.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 155ms (Views: 50.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2011-01-16 18:00:18 -0800
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (44.1ms)
+Rendered users/new.html.erb within layouts/application (59.7ms)
+Completed 200 OK in 90ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-01-16 18:00:24 -0800
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/_form.html.erb (4.7ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 45ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boards/new" for 127.0.0.1 at 2011-01-16 18:00:30 -0800
+  Processing by BoardsController#new as HTML
+Rendered boards/_form.html.erb (7.4ms)
+Rendered boards/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 63ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boards" for 127.0.0.1 at 2011-01-16 19:02:03 -0800
+  Processing by BoardsController#index as HTML
+  [1m[36mSQL (1.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBoard Load (0.2ms)[0m  SELECT "boards".* FROM "boards"
+Rendered boards/index.html.erb within layouts/application (82.5ms)
+Completed 200 OK in 195ms (Views: 87.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-16 19:16:16 -0800
+  Processing by BoardsController#index as HTML
+  [1m[36mBoard Load (0.7ms)[0m  [1mSELECT "boards".* FROM "boards"[0m
+Rendered boards/index.html.erb within layouts/application (73.9ms)
+Completed 200 OK in 94ms (Views: 79.6ms | ActiveRecord: 0.7ms)

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @conversation.id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @conversation.title %>
+</p>
+
+<p>
+  <b>Board:</b>
+  <%= @conversation.board_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @conversation.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+<%= link_to 'Back', conversations_path %>
